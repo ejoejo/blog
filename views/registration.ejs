@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <% if (path === "/register") { %>
+    <title>註冊</title>
+    <% } else { %>
+    <title>登入</title>
+    <% } %>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/assets/RegistrationForm/style.css">
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <form action="" method="POST" class="register-form">
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-lg-4">
+                    <label for="firstName">帳號</label>
+                    <input name="account" class="form-control" type="text" required>
+                </div>
+            </div>
+            <% if (path === "/register") { %>
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-lg-4">
+                    <label for="email">EMAIL</label>
+                    <input name="email" class="form-control" type="email" required>
+                </div>
+            </div>
+            <% } %>
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-lg-4">
+                    <label for="password">密碼</label>
+                    <input name="password" class="form-control" type="password" required>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <% if (path === "/register") { %>
+                <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+                    <button class="btn btn-default regbutton">註冊</button>
+
+                </div>
+                <% } else { %>
+                <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+                    <button class="btn btn-default logbutton">登入</button>
+                </div>
+                <% } %>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
